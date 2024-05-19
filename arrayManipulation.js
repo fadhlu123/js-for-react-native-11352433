@@ -10,7 +10,14 @@ function processArray(arr) {
     });
 }
 
-// Example usage:
-const inputArray = [1, 2, 3, 4, 5];
-const resultArray = processArray(inputArray);
-console.log(resultArray); // Output: [3, 4, 9, 16, 15]
+function formatArrayStrings(strings, numbers) {
+    return strings.map((str, index) => {
+        if (numbers[index] % 2 === 0) {
+            return str.toUpperCase(); // capitalize if even
+        } else {
+            return str.toLowerCase(); // convert to lowercase if odd
+        }
+    });
+}
+
+module.exports = { processArray, formatArrayStrings };
